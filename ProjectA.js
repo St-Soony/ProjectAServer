@@ -19,8 +19,9 @@ ProjectAServer.get(`/:type`, (request, response) => {
 
     try
     {
-        eval(`${p.type}()`);
-        response.send(`<h1>${GateKeeper()}</h1>`);
+        let message = eval(`${p.type}()`);
+
+        response.send(`<h1>${message}</h1>`);
     }
     catch
     {
@@ -32,11 +33,13 @@ ProjectAServer.get(`/:type`, (request, response) => {
 function GateKeeper()
 {
     console.log(`complete call gatekeeper`);
+    return `complete call gatekeeper`;
 }
 
 function CheckVersion()
 {
     console.log("complete call Version checker")
+    return (`complete call gatekeeper`);
 }
 
 ProjectAServer.listen(ListeningPort, () => {
