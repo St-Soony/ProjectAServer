@@ -9,10 +9,24 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@definejs/app-module": "^1.0.0",
+    "@nestjs/core": "^9.3.9",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "figlet": "^1.5.2",
+    "fs": "^0.0.1-security",
+    "google-sheets": "^0.0.7",
     "google-spreadsheet": "^3.3.0",
+    "googleapis": "^112.0.0",
     "http": "^0.0.1-security",
-    "querystring": "^0.2.1"
+    "logger": "^0.0.1",
+    "mime": "^3.0.0",
+    "morgan": "^1.10.0",
+    "nestjs": "^0.0.1",
+    "nodemon": "^2.0.21",
+    "path": "^0.12.7",
+    "pm2": "^5.2.2",
+    "querystring": "^0.2.1",
+    "typescript": "^4.9.5"
   }
 }

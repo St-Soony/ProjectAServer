@@ -1,0 +1,19 @@
+{
+  "Global": "1",
+  "AccountLevel": "1",
+  "Weapon": "1",
+  "Material": "1",
+  "Hero": "1",
+  "NPC": "1",
+  "NPCStat": "1",
+  "Reward": "1",
+  "UseSkill": "1",
+  "Gear": "1",
+  "Skill": "1",
+  "Projectile": "1",
+  "Effect": "1",
+  "Episode": "1",
+  "Stage": "1",
+  "Name": "1",
+  "Desc": "1"
+}

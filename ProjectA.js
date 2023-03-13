@@ -1,50 +1,25 @@
-let express = require(`express`);
-let figlet = require(`figlet`);
+`use strict`
+
+const express = require(`express`);
+const figlet = require(`figlet`);
+const logger = require(`morgan`);
 
 const ListeningPort = 55687;
-const GateKeeperName = `GateKeeper`;
-
-const RoutingName = {
-    GateKeeper : `GateKeeper`,
-    DataTableVersion : `DataTableVision`,
-}
+const Router = require(`./Router/Router.js`);
 
 let ProjectAServer = express();
 
 ProjectAServer.use(figlet);
+ProjectAServer.use(logger(`dev`));
+ProjectAServer.use(express.static(`./Data/Table`));
 
-ProjectAServer.get(`/:type`, (request, response) => {
-    
-    const p = request.params;
-
-    try
-    {
-        let message = eval(`${p.type}()`);
-
-        response.send(`<h1>${message}</h1>`);
-    }
-    catch
-    {
-        console.log(`do not exist API`);
-        response.send(`do not exist API`);
-    }
-});
-
-function GateKeeper()
-{
-    console.log(`complete call gatekeeper`);
-    return `complete call gatekeeper`;
-}
-
-function CheckVersion()
-{
-    console.log("complete call Version checker")
-    return (`complete call gatekeeper`);
-}
+ProjectAServer.get("/favicon.ico", (req, res) => res.status(204).end());
+ProjectAServer.get(`/datatable/:type`, Router.Download);
+ProjectAServer.get(`/:controller`, Router.Main);
 
 ProjectAServer.listen(ListeningPort, () => {
 
-    figlet(`Listening on port ${ListeningPort}`, function(err, data) {
+    figlet(`Project A Data Server On..!! \n Listening on port ${ListeningPort}`, (err, data) => {
         if (err) {
             console.log('Something went wrong...');
             console.dir(err);
