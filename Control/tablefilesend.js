@@ -18,4 +18,13 @@ const Main = (request, response, next) => {
     return file;
 };
 
-module.exports = {Main};
+const Download = (request, response, next) => {
+
+    const p = request;
+
+    const filePath =  path.join(__dirname, `../Data/Table/${p}.csv`);
+    return filePath;
+}
+
+
+module.exports = {Main, Download};

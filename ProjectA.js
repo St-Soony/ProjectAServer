@@ -14,8 +14,10 @@ ProjectAServer.use(logger(`dev`));
 ProjectAServer.use(express.static(`./Data/Table`));
 
 ProjectAServer.get("/favicon.ico", (req, res) => res.status(204).end());
-ProjectAServer.get(`/datatable/:type`, Router.Download);
+ProjectAServer.get(`/datatable/:type`, Router.Tablesend);
+ProjectAServer.get(`/download/:type`, Router.Download);
 ProjectAServer.get(`/:controller`, Router.Main);
+
 
 ProjectAServer.listen(ListeningPort, () => {
 

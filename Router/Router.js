@@ -17,7 +17,7 @@ const Main = (request, response, next) => {
     response.send(`${result}`);
 }
 
-const Download = (request, response, next) => {
+const Tablesend = (request, response, next) => {
 
     const p = request.params;
 
@@ -26,4 +26,13 @@ const Download = (request, response, next) => {
     response.send(result);
 }
 
-module.exports = {Main, Download};
+const Download = (request, response, next) => {
+
+    const p = request.params;
+    console.log(`---`);
+    let result =  tablesend.Download(p.type);
+    console.log(result);
+    response.download(result);
+}
+
+module.exports = {Main, Tablesend, Download};

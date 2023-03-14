@@ -1,7 +1,6 @@
 `use strict`
 
 const data = require(`../Data/DataVersion.json`);
-//const WeaponTable = require(`../Data/Weapon.csv`);
 
 const Main = (request, response, next) => {
     console.log("complete call Version checker");
